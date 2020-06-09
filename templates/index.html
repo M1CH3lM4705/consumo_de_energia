@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!--<header class="header-page">
+        <div class="rel">
+            <h2 class="title">Simulador de Consumo</h2>
+            <p class="desc">Projeto para fins academêmicos</p>
+            <a href ="{% url 'aparelhos:cadastro' %}"     class="btn btn-in">inicio</a>
+        </div>
+    </header>-->
+    <main>
+        <section class="banner">
+            <button class="btn-prev" type="button">Preview</button>
+            <div class="sliders">
+                <div class="slide">
+                    <div class="slidearea">
+                        <h1>Simulador de Consumo<br/><span>Projeto para fins academêmicos</span></h1>
+                        
+                        <a href="{% url 'aparelhos:cadastro' %}">Iniciar Simulação</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    ...2
+                </div>
+                <div class="slide">
+                    ...3
+                </div>
+            </div>
+            <button class="btn-next">Next</button>
+        </section>
+    </main>
+{% endblock %}

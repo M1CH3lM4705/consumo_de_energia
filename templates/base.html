@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}" />
+    
+    
+    <title>Consumo de Energia</title>
+</head>
+<body>
+    <input type="checkbox" id="check"/>
+    <label id="icone" for="check"><img src="./static/img/botao-iconN.png"/></label>
+    <div class="barra">
+        <nav>
+            <a href=""><div class="link">Sala</div></a>
+            <a href=""><div class="link">Quarto</div></a>
+            <a href=""><div class="link">Banheiro</div></a>
+            <a href=""><div class="link">Cozinha</div></a>
+            <a href=""><div class="link">Cozinha</div></a>
+            <a href=""><div class="link">Cozinha</div></a>
+            <a href=""><div class="link">Cozinha</div></a>
+            <a href=""><div class="link">Cozinha</div></a> 
+        </nav>
+    </div>
+    <header class=header-menu>
+        <div class="header">
+            <div class="logo">
+                <a href="{% url 'core:home' %}">
+                    <img src="{% static 'img/new_logo.png' %}"/>
+                </a>
+            </div>
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="">sala</a></li>
+                        <li><a href="">cozinha</a></li>
+                        <li><a href="">quarto</a></li>
+                        <li><a href="">banheiro</a></li>
+                        <li><a href="">garagem</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    {% if messages %}
+    <div class="pure-g-r content-ribbon">
+        <aside class="pure-u-1">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </aside>
+    </div>  
+    {% endif %}
+    {% block content %}{% endblock %}
+    <footer>
+        <div class="footer_copia">
+                Copyright - Todos os direitos reservados 
+        </div>   
+    </footer>
+</body>
+</html>
