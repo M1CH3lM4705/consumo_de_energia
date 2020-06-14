@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main>
+        <section class="banner">
+            <button class="btn-prev" type="button">Preview</button>
+            <div class="sliders">
+                <div class="slide">
+                    <div class="slidearea">
+                        <h1>Simulador de Consumo<br/><span>Projeto para fins academêmicos</span></h1>
+                        
+                        <a href="{% url 'ambientes:index' %}">Iniciar Simulação</a>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-next">Next</button>
+        </section>
+        <section class="default light">
+            <div class="section-title">Novas Inserções</div>
+            <div class="section-desc"></div>
+            <div class="section-body">
+                <div class="section-aboutus">
+                    <div class="section-aboutus--left">
+                        <h4>Ambiente</h4>
+                        <a class="button" style="display: inline-block; margin-bottom:5px;" 
+                            href="{% url 'ambientes:save_ambiente' %}">Cadastrar um Ambiente</a>                         
+                    </div>
+                    <div class="section-aboutus--rigth">
+                        <h4>Aparelho</h4>
+                        <a class="button" style="display: inline-block; margin-bottom:5px;" 
+                            href="{% url 'aparelhos:save_aparelho' %}">Cadastrar um Aparelho</a>                         
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
