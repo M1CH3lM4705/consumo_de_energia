@@ -1,0 +1,29 @@
+{% extends "ambientes/lista_ambientes.html" %}
+
+{% block aparelho_content %}
+
+<table>
+    <tr>
+      <th>Nome do Aparelho</th>
+      <th>Potência</th>
+      <th>Tempo</th>
+      <th>Data de Criação</th>
+    </tr>
+    {% for aparelho in aparelhos %}
+    <tr>
+      <td>{{ aparelho.name }}</td>
+      <td>{{ aparelho.potencia }}</td>
+      <td>{{ aparelho.tempo }}</td>
+      <td>{{ aparelho.created_at }}</td>
+    </tr>
+    {% empty %}
+    <div class="pure-g-r content-ribbon">
+        <div class="pure-u-1">
+            <div class="l-box">
+                <p>Não existe aparelho cadastrado.</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</table>
+{% endblock%}
