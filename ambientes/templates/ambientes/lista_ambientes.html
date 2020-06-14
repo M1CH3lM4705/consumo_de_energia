@@ -1,0 +1,43 @@
+{% extends "ambientes/index.html" %}
+
+{% load static %}
+
+{% block ambiente_content %}
+
+<!--<h4>Ambientes</h4>
+        <table class="pure-table">
+            <thead>
+                <tr>
+                    <th>
+                        Nome
+                    </th>
+                    <th>
+                        Data de criação
+                    </th>
+                    <th>
+                        Ação
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ambiente in ambientes %}
+                <tr class="{% cycle '' 'pure-table-odd' %}">
+                    <td>
+                        {{ ambiente }}
+                    </td>
+                    <td>
+                        {{ ambiente.created_at }}
+                    </td>
+                    <td>
+                        <div class="pure-button-group" role="group" aria-label="...">
+                            <a href="" class="pure-button"><i class="fas fa-edit"></i></a>
+                            <a href="" class="pure-button"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                {% empty %}
+                <p>Não existe dados</p>
+                {% endfor %}
+            </tbody>
+        </table>-->
+{% endblock %}
