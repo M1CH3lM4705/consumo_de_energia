@@ -32,3 +32,26 @@ def lista_Aparelho(request):
     }
     template_name = 'aparelhos/index.html'
     return render(request, template_name, context)
+
+def edit_aparelho(request, pk):
+    aparelho = get_object_or_404(Aparelho, pk=pk)
+    
+    if request.method == 'POST':
+        form = AparelhoForm(request.POST, instance=aparelho)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Os dados foram alterados com sucesso')
+            return redirect('aparelhos:lista_aparelhos')
+    else:
+        form = AparelhoForm(instance=aparelho)
+    template_name = 'aparelhos/editar_aparelho.html'
+    context = {
+        'form':form,
+    }
+    return render(request, template_name, context)
+
+def deletar_aparelho(request, pk):
+    aparelho = get_object_or_404(Aparelho, pk=pk)
+    aparelho.delete()
+    messages.success(request, 'Aparelho apagado com sucesso!')
+    return redirect('aparelho:lista_aparelhos')

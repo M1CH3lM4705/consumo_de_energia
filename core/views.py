@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 #Pagina inical do site
 def pagInicio(request):
-    return render(request, 'index.html')
+    return render(request, 'home.html')

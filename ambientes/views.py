@@ -55,6 +55,7 @@ def editar_ambiente(request, pk):
 def deletar_ambiente(request, pk):
     ambientes = get_object_or_404(Ambiente, pk=pk)
     ambientes.delete()
+    messages.success(request, 'Aparelho apagado com sucesso!')
     return redirect('ambientes:index')
 
 
