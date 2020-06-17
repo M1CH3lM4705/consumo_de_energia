@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import AparelhoForm
+from .forms import AparelhoForm, RelationForm
 from django.contrib import messages
-from .models import Aparelho
-from .models import Ambiente
+from .models import Aparelho, Aparelho_Ambiente
 
 # Create your views here.
 
@@ -41,7 +40,7 @@ def edit_aparelho(request, pk):
         if form.is_valid():
             form.save()
             messages.success(request, 'Os dados foram alterados com sucesso')
-            return redirect('aparelhos:lista_aparelhos')
+            return redirect('aparelhos:index')
     else:
         form = AparelhoForm(instance=aparelho)
     template_name = 'aparelhos/editar_aparelho.html'
@@ -55,3 +54,18 @@ def deletar_aparelho(request, pk):
     aparelho.delete()
     messages.success(request, 'Aparelho apagado com sucesso!')
     return redirect('aparelho:lista_aparelhos')
+
+
+def relation(request):
+    template_name = 'aparelhos/relations.html'
+    context = {}
+    if request.method == 'POST':
+        form = RelationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Aparelho adicionado ao ambiente com sucesso.')
+            return redirect('aparelhos:lista_aparelhos')
+    else:
+        form = RelationForm()
+    context['form'] = form
+    return render(request, template_name, context)

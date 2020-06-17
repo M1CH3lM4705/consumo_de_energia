@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome.css' %}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
     
     
     <title>{% block title %}Consumo de Energia{% endblock %}</title>
@@ -53,11 +54,6 @@
             <p>{{ message }}</p>
             {% endfor %}
         </aside>
-        <script type="text/javascript">
-            setTimeout(function() {
-                $('#fadOut').fadeOut('fast');
-            }, 3000);
-        </script>
     </div>  
     {% endif %}
     {% block content %}{% endblock %}
@@ -68,5 +64,12 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
+    <script type="text/javascript">
+            setTimeout(function() {
+                $('#fadOut').fadeOut('fast');
+            }, 3000);
+        </script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}%%"></script>
+    <script
 </body>
 </html>

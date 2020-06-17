@@ -17,7 +17,6 @@ class Aparelho(models.Model):
     name = models.CharField(verbose_name='Nome do aparelho', max_length=100)
     slug = models.SlugField(verbose_name='Atalho', blank=True, max_length=100, unique=True)
     potencia = models.IntegerField(verbose_name='Potencia em watts', null=True, blank=True)
-    tempo = models.IntegerField(verbose_name='Tempo sugerido', null=True, blank=True)
     created_at = models.DateTimeField(verbose_name='Criado em', auto_now_add=True)
     updated_at = models.DateTimeField(verbose_name='Atualizado em', auto_now=True)
 
@@ -40,9 +39,11 @@ class Aparelho_Ambiente(models.Model):
         (2, 'horas/dia'),
     )
     
-    aparelho = models.ForeignKey(Aparelho, verbose_name='Aparelho', related_name='aparelhos', on_delete=models.deletion.DO_NOTHING)
     ambiente = models.ForeignKey(Ambiente, verbose_name='Ambiente', related_name='ambientes', on_delete=models.deletion.DO_NOTHING)
-    status = models.IntegerField('Tempo sugerido', choices=STATUS_CHOICES, default=2, blank=True)
+    aparelho = models.ForeignKey(Aparelho, verbose_name='Aparelho', related_name='aparelhos', on_delete=models.deletion.DO_NOTHING)
+    quantidade = models.IntegerField('Quantidade', default=0, blank=True,)
+    tempo = models.IntegerField(verbose_name='Tempo de uso', null=True, blank=True)
+    status = models.IntegerField(choices=STATUS_CHOICES, default=2, blank=True)
     created_at = models.DateTimeField('Criado em', auto_now_add=True)
     updated_at = models.DateTimeField('Atualizado em', auto_now=True)
     
