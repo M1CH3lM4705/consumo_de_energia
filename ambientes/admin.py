@@ -1,6 +1,5 @@
 from django.contrib import admin
 from ambientes.models import Ambiente
-
 # Register your models here.
 
 class AmbienteAdmin(admin.ModelAdmin):

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import AparelhoForm, RelationForm
 from django.contrib import messages
 from .models import Aparelho, Aparelho_Ambiente
+from ambientes.models import Ambiente
 
 # Create your views here.
 
@@ -69,3 +70,16 @@ def relation(request):
         form = RelationForm()
     context['form'] = form
     return render(request, template_name, context)
+
+def simulator(request, slug):
+    context={}
+    ambientes = Ambiente.objects.prefetch_related('ambientes').order_by('id')
+    apps = Aparelho_Ambiente.objects.prefetch_related('ambientes','aparelhos').values(
+        'aparelho__name'
+    ).filter(ambiente__slug=slug)
+    context = {
+
+        'ambientes':ambientes,
+        'apps':apps,
+    }
+    return render(request, 'aparelhos/simulador.html', context)

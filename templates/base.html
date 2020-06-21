@@ -57,11 +57,7 @@
     </div>  
     {% endif %}
     {% block content %}{% endblock %}
-    <footer>
-        <div class="footer_copia">
-                Copyright - Todos os direitos reservados 
-        </div>   
-    </footer>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
     <script type="text/javascript">
@@ -69,7 +65,11 @@
                 $('#fadOut').fadeOut('fast');
             }, 3000);
         </script>
-    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}%%"></script>
-    <script
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    <footer>
+        <div class="footer_copia">
+                Copyright - Todos os direitos reservados 
+        </div>   
+    </footer>
 </body>
 </html>

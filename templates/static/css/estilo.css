@@ -6,6 +6,7 @@
 body{
     font-family:'Montserrat', sans-serif;
     overflow-x: hidden;
+    height: 100%;
 }
 .btn {
     color: #000;
@@ -315,3 +316,37 @@ button.btn-prev{
     width:600px;
     text-align:center;
 }
+
+/* Guias */
+.body{
+    height: 100%;
+    font-family: Arial;
+}
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+  }
+  
+  .tablink:hover {
+    background-color: #777;
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    color: black;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+  
+  #Home {background-color: red;}
+  #News {background-color: green;}
+  #Contact {background-color: blue;}
+  #About {background-color: orange;}

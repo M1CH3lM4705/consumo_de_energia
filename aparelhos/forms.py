@@ -1,6 +1,5 @@
 from django import forms
 from aparelhos.models import Aparelho, Aparelho_Ambiente
-from ambientes.models import Ambiente
 
 #criação do formulario de preenchimento do aparelho.
 
